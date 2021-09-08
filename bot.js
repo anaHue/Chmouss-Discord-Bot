@@ -27,7 +27,7 @@ async function checkIfChmoussIsInLive(){
     if(!inLive && result.data.length > 0 && result.data[0].type == 'live'){
         const annoucementChannel = client.channels.cache.get(process.env.ANNOUNCEMENT_CHANNEL_ID);
         annoucementChannel.send("Hey " + client.guilds.cache.toJSON()[0].roles.everyone.toString() + "!\n\n"
-                            + "Chmouss is playing at " + result.data[0].game_name + " right now !\n\n"
+                            + "Chmouss is playing at **" + result.data[0].game_name + "** right now !\n\n"
                             + "https://www.twitch.tv/chmouss");
         inLive = true;
 
