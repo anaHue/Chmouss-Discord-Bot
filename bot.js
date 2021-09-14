@@ -26,11 +26,10 @@ async function checkIfChmoussIsInLive(){
 
     if(!inLive && result.data.length > 0 && result.data[0].type == 'live'){
         const annoucementChannel = client.channels.cache.get(process.env.ANNOUNCEMENT_CHANNEL_ID);
-        annoucementChannel.send("Test");
-        /* annoucementChannel.send("Hey " + client.guilds.cache.toJSON()[0].roles.everyone.toString() + "!\n\n"
+        annoucementChannel.send("Hey " + client.guilds.cache.toJSON()[0].roles.everyone.toString() + "!\n\n"
                             + "Chmouss is live on Twitch, now playing **" + result.data[0].game_name + "** !\n\n"
                             + "**" + result.data[0].title + "**"
-                            + "Be sure to check it out :blue_heart: https://www.twitch.tv/chmouss");*/
+                            + "Be sure to check it out :blue_heart: https://www.twitch.tv/chmouss");
         inLive = true;
 
     } else if (result.data.length == 0 && inLive) {
